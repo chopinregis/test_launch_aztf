@@ -6,7 +6,6 @@ locals{
         name=linuxapps.name
         os_type=linuxapps.os_type
         sku_name=linuxapps.sku_name
-        enabled =linuxapps.enabled
       }
     ]
 ])
