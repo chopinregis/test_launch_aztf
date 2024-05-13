@@ -21,12 +21,7 @@ variable "myresourcegroupname" {
 
 
 
-# Variable declaration
-variable "regisconfigs" {
-  description = "Path to the configuration files"
-  type        = string
-  # Provide a default or expect the user to specify it
-}
+
 
 # Resource group (Example, make sure this matches your actual needs)
 resource "azurerm_resource_group" "example" {
