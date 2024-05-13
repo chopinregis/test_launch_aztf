@@ -29,14 +29,21 @@ resource "azurerm_resource_group" "example" {
   location = "East US"
 }
 
-# AKS Cluster
 resource "azurerm_kubernetes_cluster" "batchabcd" {
-  name                = "example-aks1"
+  name                = "example-aks-cluster"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
+  dns_prefix          = "example-aks"
 
-  # Ensure to configure the required properties for AKS here
+  default_node_pool {
+    name       = "default"
+    node_count = 3
+    vm_size    = "Standard_DS2_v2"
+  }
+
+  # Other necessary configurations like identity, network profile etc.
 }
+
 
 variable "regisconfigs" {
   description = "Path to the configuration files"
