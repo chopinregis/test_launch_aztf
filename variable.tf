@@ -42,9 +42,3 @@ resource "azurerm_kubernetes_cluster" "batchabcd" {
 
   # Ensure to configure the required properties for AKS here
 }
-
-# Local value using 'regisconfigs'
-locals {
-  linux_app = [for f in fileset("${path.module}/${var.regisconfigs}", "[^_]*.yaml") :
-    yamldecode(file("${path.module}/${var.regisconfigs}/${f}"))]
-}
