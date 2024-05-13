@@ -42,8 +42,8 @@ resource "azurerm_kubernetes_cluster" "batchabcd" {
   }
 
   service_principal {
-    client_id     = var.sp_client_id
-    client_secret = var.sp_client_secret
+    client_id     = var.client_id
+    client_secret = var.client_secret
   }
 
   # Make sure no `identity` block is defined
