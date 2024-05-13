@@ -42,3 +42,9 @@ resource "azurerm_kubernetes_cluster" "batchabcd" {
 
   # Ensure to configure the required properties for AKS here
 }
+
+variable "regisconfigs" {
+  description = "Path to the configuration files"
+  type        = string
+  default     = "path/to/configs"
+}
