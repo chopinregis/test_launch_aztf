@@ -10,3 +10,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "kube1nodepool" {
     Environment = "Production"
   }
 }
+
+
+
+
