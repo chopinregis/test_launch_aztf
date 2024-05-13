@@ -33,7 +33,7 @@ resource "azurerm_kubernetes_cluster" "batchabcd" {
   name                = "example-aks-cluster"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
-  dns_prefix          = "example-aks"
+  dns_prefix          = "exampleaks"
 
   default_node_pool {
     name       = "default"
@@ -41,8 +41,14 @@ resource "azurerm_kubernetes_cluster" "batchabcd" {
     vm_size    = "Standard_DS2_v2"
   }
 
-  # Other necessary configurations like identity, network profile etc.
+  service_principal {
+    client_id     = var.sp_client_id
+    client_secret = var.sp_client_secret
+  }
+
+  # Make sure no `identity` block is defined
 }
+
 
 
 variable "regisconfigs" {
