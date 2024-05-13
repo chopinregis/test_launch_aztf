@@ -1,5 +1,5 @@
 locals{
-//  linux_app=[for f in fileset("${path.module}/${var.regisconfigs}", "[^_]*.yaml") : yamldecode(file("${path.module}/${var.regisconfigs}/${f}"))]
+  linux_app=[for f in fileset("${path.module}/${var.regisconfigs}", "[^_]*.yaml") : yamldecode(file("${path.module}/${var.regisconfigs}/${f}"))]
 
 //  linux_app = [for f in fileset("${path.module}/${var.regisconfigs}", "[^_]*.yaml") : yamldecode(file("${path.module}/${var.regisconfigs}/${f}"))]
 
